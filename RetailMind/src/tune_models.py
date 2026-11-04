@@ -71,6 +71,10 @@ def update_readme(champion_name, champion_params, results):
 
     for name, result in results.items():
 
+    # Skip holdout metrics because they are displayed separately
+        if name == "_holdout_metrics":
+            continue
+
         lines.append(
             f"| {name} "
             f"| {result['train_recall']:.4f} "
@@ -78,8 +82,7 @@ def update_readme(champion_name, champion_params, results):
             f"| {result['recall_gap']:.4f} "
             f"| {result['cv_roc_auc']:.4f} "
             f"| {result['bias_variance_status']} |"
-        )
-
+         )
     lines.extend([
         "",
         "### Final holdout evaluation",
