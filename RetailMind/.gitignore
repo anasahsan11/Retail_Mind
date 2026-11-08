@@ -1,4 +1,12 @@
-.venv/
 __pycache__/
-*.py[cod]
-.DS_Store
+*.pyc
+.venv/
+venv/
+.env
+
+# Dataset
+data/*.csv
+
+# Trained models
+models/*.pkl
+models/*.joblib
